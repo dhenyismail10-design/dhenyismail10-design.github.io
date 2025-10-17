@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portofolio Dheny</title>
   <style>
     * {
@@ -18,12 +18,23 @@
       background-size: 300% 300%;
       animation: gradientMove 10s ease infinite;
       color: white;
+      overflow-x: hidden;
+      transition: 0.5s;
     }
 
     @keyframes gradientMove {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
+    }
+
+    /* Canvas Partikel */
+    #stars {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
     }
 
     /* Navbar */
@@ -38,6 +49,7 @@
       width: 100%;
       top: 0;
       z-index: 1000;
+      transition: 0.3s;
     }
 
     .logo {
@@ -46,9 +58,7 @@
       font-size: 26px;
     }
 
-    .logo span {
-      color: white;
-    }
+    .logo span { color: white; }
 
     .navbar ul {
       list-style: none;
@@ -68,6 +78,22 @@
       text-shadow: 0 0 10px #00b4d8;
     }
 
+    /* Tombol mode */
+    .toggle-mode {
+      background: #00b4d8;
+      border: none;
+      color: white;
+      border-radius: 20px;
+      padding: 8px 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .toggle-mode:hover {
+      background: #0288a3;
+      box-shadow: 0 0 15px #00b4d8;
+    }
+
     /* Home */
     .home {
       height: 100vh;
@@ -83,15 +109,13 @@
       animation: fadeInUp 1.5s ease;
     }
 
-    .home span {
-      color: #00b4d8;
-    }
+    .home span { color: #00b4d8; }
 
-    .home p {
-      margin: 20px 0;
-      font-size: 1.2rem;
-      opacity: 0.9;
-      animation: fadeInUp 2s ease;
+    .typing {
+      font-size: 1.3rem;
+      color: #00b4d8;
+      height: 30px;
+      margin-top: 10px;
     }
 
     .btn {
@@ -102,8 +126,8 @@
       border-radius: 30px;
       transition: 0.3s;
       display: inline-block;
-      margin-top: 10px;
-      animation: fadeInUp 2.5s ease;
+      margin-top: 20px;
+      animation: fadeInUp 2s ease;
     }
 
     .btn:hover {
@@ -133,9 +157,7 @@
       transition: 0.5s;
     }
 
-    .about img:hover {
-      transform: scale(1.05);
-    }
+    .about img:hover { transform: scale(1.05); }
 
     .about .text {
       max-width: 500px;
@@ -164,7 +186,6 @@
       border-radius: 15px;
       padding: 20px;
       transition: 0.3s;
-      transform: translateY(0);
       border: 1px solid rgba(0, 180, 216, 0.2);
     }
 
@@ -179,10 +200,7 @@
       border-radius: 10px;
     }
 
-    .card h3 {
-      margin-top: 15px;
-      color: #00b4d8;
-    }
+    .card h3 { margin-top: 15px; color: #00b4d8; }
 
     /* Contact */
     .contact {
@@ -198,8 +216,7 @@
       gap: 15px;
     }
 
-    .contact input,
-    .contact textarea {
+    .contact input, .contact textarea {
       padding: 12px;
       border-radius: 8px;
       border: none;
@@ -244,36 +261,36 @@
     }
 
     @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px;
-      }
-      .about-container {
-        flex-direction: column;
-        text-align: center;
-      }
-      .about .text {
-        text-align: center;
-      }
+    /* Mode Terang */
+    body.light {
+      background: #f6f8fc;
+      color: #0f172a;
+    }
+
+    body.light .navbar {
+      background: rgba(255,255,255,0.8);
+    }
+
+    body.light .logo span {
+      color: #0f172a;
+    }
+
+    body.light .card {
+      background: white;
+      color: #0f172a;
     }
   </style>
 </head>
 <body>
+  <canvas id="stars"></canvas>
+
   <!-- Navbar -->
   <header class="navbar">
-    <h2 class="logo">Djemy<span>.</span></h2>
+    <h2 class="logo">Dheny Ismail<span>.</span></h2>
     <nav>
       <ul>
         <li><a href="#home">Beranda</a></li>
@@ -282,13 +299,14 @@
         <li><a href="#contact">Kontak</a></li>
       </ul>
     </nav>
+    <button class="toggle-mode" id="modeBtn">🌙</button>
   </header>
 
   <!-- Section Home -->
   <section id="home" class="home">
     <div class="content">
-      <h1>Hai, Saya <span>Djemy</span></h1>
-      <p>Web Developer & Desainer Antarmuka Kreatif</p>
+      <h1>Hai, Saya <span>dheny</span></h1>
+      <div class="typing" id="typing"></div>
       <a href="#projects" class="btn">Lihat Portofolio</a>
     </div>
   </section>
@@ -297,17 +315,16 @@
   <section id="about" class="about">
     <h2>Tentang Saya</h2>
     <div class="about-container">
-      <img src="https://i.ibb.co/Y8rCZCk/profile.png" alt="Foto Profil" />
+      <img src="Screenshot 2025-10-17 134708.png" alt="Foto Profil" />
       <div class="text">
         <p>
-          Saya adalah pengembang web yang senang menciptakan tampilan digital
-          menarik dan responsif. Saya berfokus pada pengalaman pengguna yang
-          intuitif dan desain yang elegan.
-        </p>
+          Perkenalkan, saya Dheny Ismail, siswa kelas 11 SMK Informatika Utama jurusan Rekayasa Perangkat Lunak (RPL). 
+          Saya bermaksud melaksanakan Praktik Kerja Lapangan (PKL) untuk menambah pengalaman dan mengembangkan keterampilan di bidang pemrograman. 
+          Saya dapat dihubungi melalui nomor telepon atau email, dan saya siap mengikuti peraturan serta bertanggung jawab selama menjalani PKL.
+
         <p>
-          Keahlian saya meliputi HTML, CSS, JavaScript, serta framework modern
-          seperti React dan Laravel. Saya selalu ingin belajar teknologi baru
-          untuk menciptakan solusi kreatif.
+          Keahlian: HTML, CSS, JavaScript, React, dan Laravel.
+          Selalu siap belajar hal baru dan berinovasi di setiap proyek.
         </p>
       </div>
     </div>
@@ -318,9 +335,9 @@
     <h2>Projek Saya</h2>
     <div class="project-grid">
       <div class="card">
-        <img src="https://i.ibb.co/bP7yJYQ/web1.png" alt="Project 1" />
-        <h3>Website Bisnis</h3>
-        <p>Company profile modern dengan desain minimalis dan elegan.</p>
+        <img src="Screenshot 2025-10-17 134903.png" alt="Project 1" />
+        <h3>Website Penjualan</h3>
+        <p>Company profile modern dengan desain elegan.</p>
       </div>
       <div class="card">
         <img src="https://i.ibb.co/NZjtxQC/web2.png" alt="Project 2" />
@@ -351,7 +368,7 @@
   </footer>
 
   <script>
-    // Efek animasi saat scroll
+    // Animasi scroll
     const elements = document.querySelectorAll(".card, .about-container, .content");
     window.addEventListener("scroll", () => {
       elements.forEach(el => {
@@ -360,6 +377,70 @@
         if (pos < screen - 100) el.classList.add("visible");
       });
     });
+
+    // Animasi teks ketik
+    const text = ["Web Developer", "UI Designer", "Frontend Engineer"];
+    let idx = 0, char = 0;
+    const typingEl = document.getElementById("typing");
+    function type() {
+      if (char < text[idx].length) {
+        typingEl.textContent += text[idx].charAt(char);
+        char++;
+        setTimeout(type, 100);
+      } else {
+        setTimeout(erase, 2000);
+      }
+    }
+    function erase() {
+      if (char > 0) {
+        typingEl.textContent = text[idx].substring(0, char - 1);
+        char--;
+        setTimeout(erase, 50);
+      } else {
+        idx = (idx + 1) % text.length;
+        setTimeout(type, 500);
+      }
+    }
+    document.addEventListener("DOMContentLoaded", type);
+
+    // Tombol Dark/Light Mode
+    const modeBtn = document.getElementById("modeBtn");
+    modeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+      modeBtn.textContent = document.body.classList.contains("light") ? "🌞" : "🌙";
+    });
+
+    // Partikel bintang
+    const canvas = document.getElementById("stars");
+    const ctx = canvas.getContext("2d");
+    let stars = [];
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      stars = Array.from({length: 100}, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 2,
+        speed: Math.random() * 0.5 + 0.2
+      }));
+    }
+    window.addEventListener("resize", resize);
+    resize();
+
+    function animateStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "white";
+      stars.forEach(s => {
+        s.y += s.speed;
+        if (s.y > canvas.height) s.y = 0;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      requestAnimationFrame(animateStars);
+    }
+    animateStars();
   </script>
 </body>
 </html>
