@@ -1,202 +1,213 @@
 <!DOCTYPE html>
-<style>
-  * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  font-family: "Poppins", sans-serif;
-}
-
-body {
-  background: #0f172a;
-  color: white;
-}
-
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  background: rgba(15, 23, 42, 0.9);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-}
-
-.logo {
-  color: #00b4d8;
-  font-weight: bold;
-  font-size: 24px;
-}
-
-.logo span {
-  color: white;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: white;
-  transition: 0.3s;
-}
-
-.navbar a:hover {
-  color: #00b4d8;
-}
-
-/* Home */
-.home {
-  height: 100vh;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 100px 20px;
-}
-
-.home h1 {
-  font-size: 3rem;
-}
-
-.home span {
-  color: #00b4d8;
-}
-
-.home p {
-  margin: 20px 0;
-  font-size: 1.2rem;
-}
-
-.btn {
-  background: #00b4d8;
-  padding: 10px 25px;
-  color: white;
-  text-decoration: none;
-  border-radius: 25px;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #0288a3;
-}
-
-/* About */
-.about {
-  padding: 100px 50px;
-  text-align: center;
-}
-
-.about-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
-  flex-wrap: wrap;
-}
-
-.about img {
-  width: 250px;
-  border-radius: 50%;
-  margin: 20px;
-}
-
-.about .text {
-  max-width: 500px;
-  text-align: left;
-}
-
-/* Projects */
-.projects {
-  padding: 100px 50px;
-  background: #1e293b;
-  text-align: center;
-}
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.card {
-  background: #0f172a;
-  border-radius: 15px;
-  padding: 20px;
-  transition: 0.3s;
-  transform: translateY(0);
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 20px rgba(0, 180, 216, 0.4);
-}
-
-.card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-/* Contact */
-.contact {
-  padding: 100px 50px;
-  text-align: center;
-}
-
-.contact form {
-  max-width: 600px;
-  margin: 40px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.contact input,
-.contact textarea {
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-  resize: none;
-}
-
-.contact button {
-  padding: 12px;
-  border: none;
-  background: #00b4d8;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.contact button:hover {
-  background: #0288a3;
-}
-
-/* Footer */
-footer {
-  background: #0f172a;
-  text-align: center;
-  padding: 20px;
-  color: #aaa;
-}
-</style>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portofolio Djemy</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: white;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: rgba(15, 23, 42, 0.9);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      color: #00b4d8;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .logo span {
+      color: white;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #00b4d8;
+    }
+
+    /* Home */
+    .home {
+      height: 100vh;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .home h1 {
+      font-size: 3rem;
+    }
+
+    .home span {
+      color: #00b4d8;
+    }
+
+    .home p {
+      margin: 20px 0;
+      font-size: 1.2rem;
+    }
+
+    .btn {
+      background: #00b4d8;
+      padding: 10px 25px;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #0288a3;
+    }
+
+    /* About */
+    .about {
+      padding: 100px 50px;
+      text-align: center;
+    }
+
+    .about-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .about img {
+      width: 250px;
+      border-radius: 50%;
+      margin: 20px;
+    }
+
+    .about .text {
+      max-width: 500px;
+      text-align: left;
+    }
+
+    /* Projects */
+    .projects {
+      padding: 100px 50px;
+      background: #1e293b;
+      text-align: center;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #0f172a;
+      border-radius: 15px;
+      padding: 20px;
+      transition: 0.3s;
+      transform: translateY(0);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(0, 180, 216, 0.4);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    /* Contact */
+    .contact {
+      padding: 100px 50px;
+      text-align: center;
+    }
+
+    .contact form {
+      max-width: 600px;
+      margin: 40px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact input,
+    .contact textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      resize: none;
+    }
+
+    .contact button {
+      padding: 12px;
+      border: none;
+      background: #00b4d8;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact button:hover {
+      background: #0288a3;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
+    }
+
+    /* Animasi Scroll */
+    .card, .about-container, .content {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: 1s;
+    }
+
+    .visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
@@ -277,6 +288,19 @@ footer {
     <p>© 2025 Djemy | Dibuat dengan ❤️ dan kode.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Efek animasi saat scroll
+    const elements = document.querySelectorAll(".card, .about-container, .content");
+
+    window.addEventListener("scroll", () => {
+      elements.forEach(el => {
+        const position = el.getBoundingClientRect().top;
+        const screen = window.innerHeight;
+        if (position < screen - 100) {
+          el.classList.add("visible");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
