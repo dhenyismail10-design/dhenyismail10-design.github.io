@@ -15,18 +15,20 @@
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
+      <a href="#skills">Skills</a>
       <a href="#portfolio">Portfolio</a>
-      <a href="#services">Services</a>
-      <button class="contact-btn">Contact</button>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section id="home" class="hero">
     <div class="text reveal">
-      <h1>Hello, I’m <br><span>Dheny Ismail</span></h1>
-      <p>I'm a Freelance <b>UI/UX Designer</b> and <b>Developer</b> based in London, England.<br>
-        I strive to build immersive and beautiful web applications through carefully crafted code and user-centric design.</p>
+      <h1>Hello, I’m <br><span>Brooklyn Gilbert</span></h1>
+      <h3 class="typing"></h3>
+      <p>I'm a Freelance <b>UI/UX Designer</b> and <b>Web Developer</b> based in London, England.<br>
+      I create immersive, user-focused web experiences with clean design and modern code.</p>
       <button class="say-hello">Say Hello!</button>
     </div>
     <div class="image reveal">
@@ -34,31 +36,81 @@
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- About -->
   <section id="about" class="about reveal">
     <h2>About Me</h2>
-    <p>I’m passionate about crafting digital experiences that blend creativity and functionality. My work focuses on design systems, front-end architecture, and responsive development.</p>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="portfolio reveal">
-    <h2>Portfolio</h2>
-    <div class="projects">
-      <div class="card">🌐 Website Design</div>
-      <div class="card">📱 Mobile App</div>
-      <div class="card">🖥 Dashboard UI</div>
+    <p>I’m passionate about technology, art, and user experience. My goal is to merge creativity and logic to produce elegant and effective digital products. Over the last 5 years, I’ve helped brands grow through intuitive design and smart code.</p>
+    <div class="stats">
+      <div><h3>5+</h3><p>Years Experience</p></div>
+      <div><h3>120+</h3><p>Projects Completed</p></div>
+      <div><h3>50+</h3><p>Happy Clients</p></div>
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section id="services" class="services reveal">
-    <h2>Services</h2>
-    <ul>
-      <li>UI/UX Design</li>
-      <li>Frontend Development</li>
-      <li>Branding & Visual Design</li>
-    </ul>
+  <!-- Skills -->
+  <section id="skills" class="skills reveal">
+    <h2>My Skills</h2>
+    <div class="skill-bars">
+      <div class="bar"><span>HTML / CSS</span><div class="progress" style="width:95%"></div></div>
+      <div class="bar"><span>JavaScript</span><div class="progress" style="width:85%"></div></div>
+      <div class="bar"><span>React / Vue</span><div class="progress" style="width:80%"></div></div>
+      <div class="bar"><span>UI/UX Design</span><div class="progress" style="width:90%"></div></div>
+      <div class="bar"><span>PHP / Laravel</span><div class="progress" style="width:75%"></div></div>
+    </div>
   </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="portfolio reveal">
+    <h2>Featured Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <img src="https://i.ibb.co/6vWbWnQ/project1.jpg" alt="">
+        <h3>Modern Business Website</h3>
+        <p>Responsive business landing page with modern UI and SEO optimization.</p>
+      </div>
+      <div class="card">
+        <img src="https://i.ibb.co/THfp2Cf/project2.jpg" alt="">
+        <h3>Mobile App UI</h3>
+        <p>Designed a minimal and interactive finance mobile app interface.</p>
+      </div>
+      <div class="card">
+        <img src="https://i.ibb.co/xMj4T99/project3.jpg" alt="">
+        <h3>Portfolio Redesign</h3>
+        <p>Rebuilt a personal portfolio with animation and dark/light mode.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonials reveal">
+    <h2>What Clients Say</h2>
+    <div class="reviews">
+      <div class="review">
+        <p>"Brooklyn transformed our outdated website into something fresh and modern. Amazing attention to detail!"</p>
+        <h4>- Emma Wilson</h4>
+      </div>
+      <div class="review">
+        <p>"Professional, creative, and quick to respond. The best freelance developer I’ve worked with!"</p>
+        <h4>- James Parker</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact reveal">
+    <h2>Get In Touch</h2>
+    <p>Interested in working together? Let’s talk about your project!</p>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Brooklyn Gilbert | All Rights Reserved</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
