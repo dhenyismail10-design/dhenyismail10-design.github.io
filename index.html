@@ -1,40 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brooklyn Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Link Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brooklyn Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Navbar -->
-    <header>
-        <div class="logo">Brooklyn</div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Blog</a>
-            <a href="#">Services</a>
-            <button class="contact-btn">Contact</button>
-        </nav>
-    </header>
+  <!-- Navbar -->
+  <header>
+    <div class="logo">Brooklyn</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#services">Services</a>
+      <button class="contact-btn">Contact</button>
+    </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="text">
-            <h1 class="animate-slide">Hello, I’m <br><span>Dheny Ismail</span></h1>
-            <p class="animate-fade">I'm a Freelance <b>UI/UX Designer</b> and <b>Developer</b> based in London, England.<br>
-            I strive to build immersive and beautiful web applications through carefully crafted code and user-centric design.</p>
-            <button class="say-hello animate-bounce">Say Hello!</button>
-        </div>
-        <div class="image animate-float">
-            <img src="https://i.ibb.co/0rZcFVc/person.png" alt="Profile">
-        </div>
-    </section>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="text reveal">
+      <h1>Hello, I’m <br><span>Dheny Ismail</span></h1>
+      <p>I'm a Freelance <b>UI/UX Designer</b> and <b>Developer</b> based in London, England.<br>
+        I strive to build immersive and beautiful web applications through carefully crafted code and user-centric design.</p>
+      <button class="say-hello">Say Hello!</button>
+    </div>
+    <div class="image reveal">
+      <img src="https://i.ibb.co/0rZcFVc/person.png" alt="Profile">
+    </div>
+  </section>
 
+  <!-- About Section -->
+  <section id="about" class="about reveal">
+    <h2>About Me</h2>
+    <p>I’m passionate about crafting digital experiences that blend creativity and functionality. My work focuses on design systems, front-end architecture, and responsive development.</p>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio reveal">
+    <h2>Portfolio</h2>
+    <div class="projects">
+      <div class="card">🌐 Website Design</div>
+      <div class="card">📱 Mobile App</div>
+      <div class="card">🖥 Dashboard UI</div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services reveal">
+    <h2>Services</h2>
+    <ul>
+      <li>UI/UX Design</li>
+      <li>Frontend Development</li>
+      <li>Branding & Visual Design</li>
+    </ul>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
