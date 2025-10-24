@@ -176,6 +176,82 @@
       margin-bottom: 15px;
     }
 
+    /* CERTIFICATES */
+    .certificates {
+      background: rgba(15, 23, 42, 0.8);
+      text-align: center;
+    }
+
+    .certificates h2 {
+      color: #00b4d8;
+      margin-bottom: 40px;
+    }
+
+    .certificate-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .certificate {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(0,180,216,0.2);
+      border-radius: 15px;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .certificate img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .certificate:hover {
+      transform: translateY(-10px);
+      border-color: #00b4d8;
+      box-shadow: 0 0 15px rgba(0,180,216,0.5);
+    }
+
+    /* EDUCATION */
+    .education {
+      text-align: center;
+    }
+
+    .education h2 {
+      color: #00b4d8;
+      margin-bottom: 40px;
+    }
+
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .edu-item {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(0,180,216,0.2);
+      border-radius: 15px;
+      padding: 20px;
+      width: 80%;
+      max-width: 600px;
+      text-align: left;
+      transition: 0.3s;
+    }
+
+    .edu-item:hover {
+      transform: translateY(-5px);
+      border-color: #00b4d8;
+      box-shadow: 0 0 15px rgba(0,180,216,0.5);
+    }
+
+    .edu-item h3 {
+      color: #00b4d8;
+      margin-bottom: 5px;
+    }
+
     /* CONTACT */
     .contact {
       text-align: center;
@@ -284,6 +360,40 @@
         <img src="https://i.ibb.co/6ZX3gK2/web1.png" alt="Toko Online">
         <h3>Toko Online</h3>
         <p>Website jual beli produk sederhana tanpa framework.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bagian Sertifikat -->
+  <section id="certificates" class="certificates">
+    <h2>Sertifikat Saya</h2>
+    <div class="certificate-grid">
+      <div class="certificate">
+        <img src="sertifikat1.jpg" alt="Sertifikat HTML Dasar">
+        <h3>HTML Dasar</h3>
+        <p>Sertifikat penyelesaian pelatihan dasar HTML dari Dicoding.</p>
+      </div>
+      <div class="certificate">
+        <img src="sertifikat2.jpg" alt="Sertifikat Desain Grafis">
+        <h3>Desain Grafis</h3>
+        <p>Sertifikat keikutsertaan dalam pelatihan desain menggunakan Canva dan Photoshop.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bagian Pendidikan -->
+  <section id="education" class="education">
+    <h2>Riwayat Pendidikan</h2>
+    <div class="edu-list">
+      <div class="edu-item">
+        <h3>SMK Informatika Utama</h3>
+        <p>Jurusan Rekayasa Perangkat Lunak (RPL)</p>
+        <p><small>2023 - Sekarang</small></p>
+      </div>
+      <div class="edu-item">
+        <h3>SMP Negeri 1 Tangerang</h3>
+        <p>Lulus dengan nilai baik dan aktif dalam kegiatan ekstrakurikuler.</p>
+        <p><small>2020 - 2023</small></p>
       </div>
     </div>
   </section>
